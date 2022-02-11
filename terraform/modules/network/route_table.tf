@@ -1,8 +1,8 @@
 resource "aws_route_table" "public_route" {
   vpc_id = aws_vpc.sandbox_vpc.id
 
-  route = {
-    cidr       = "0.0.0.0/0"
+  route {
+    cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.sandbox_internet_gw.id
   }
 
@@ -16,8 +16,8 @@ resource "aws_route_table" "private_route" {
 
   vpc_id = aws_vpc.sandbox_vpc.id
 
-  route = {
-    cidr           = "0.0.0.0/0"
+  route {
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.sandbox_nat[count.index].id
   }
 
