@@ -1,4 +1,4 @@
-resource "aws_vpc" "demo_vpc" {
+resource "aws_vpc" "sandbox_vpc" {
   cidr_block = var.vpc.cidr_block
 
   tags = {
